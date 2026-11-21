@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --text-dark: #1F2937;
+    --text-gray: #6B7280;
+    --bg-beige: #FEF6E4;
+    --bg-white: #FFFFFF;
+    --border-light: #E5E7EB;
+}
+
+body {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents accidental horizontal scrolling on phone */
+}
+
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* --- NAVIGATION --- */
+.navbar {
+    padding: 20px 0;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-gray);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-login {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+}
+
+.btn-signup {
+    font-size: 14px;
+    font-weight: 500;
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    height: 500px;
+    background-image: url('https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darkens image so white text pops */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover { background: var(--primary-hover); }
+
+/* --- ABOUT SECTION --- */
+.about {
+    display: flex;
+    gap: 40px;
+    padding: 80px 20px;
+    align-items: center;
+}
+
+.about-text { flex: 1; }
+.about-text h2 { font-size: 28px; margin-bottom: 20px; font-weight: 700; }
+.about-text p { font-size: 15px; color: var(--text-gray); line-height: 1.8; }
+
+.about-image { flex: 1; }
+.about-image img { width: 100%; border-radius: 12px; object-fit: cover; }
+
+/* --- FEATURES SECTION (The 3 Columns) --- */
+.features { padding: 60px 20px 80px; text-align: center; }
+.features h2 { font-size: 32px; margin-bottom: 15px; font-weight: 700; }
+.features-subtitle { max-width: 700px; margin: 0 auto 50px; font-size: 15px; color: var(--text-gray); }
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* This makes the 3 columns */
+    gap: 30px;
+    text-align: left;
+}
+
+.feature-card {
+    border: 1px solid var(--border-light);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.icon-box {
+    background: #EEF2FF;
+    width: 48px; height: 48px;
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 { font-size: 18px; margin-bottom: 12px; font-weight: 600; }
+.feature-card p { font-size: 14px; color: var(--text-gray); line-height: 1.6; }
+
+/* --- TESTIMONIAL SECTION --- */
+.testimonial {
+    background: var(--bg-beige);
+    padding: 80px 20px;
+}
+
+.testimonial-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.testimonial-img { flex: 0 0 200px; }
+.testimonial-img img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; }
+
+.testimonial-text { flex: 1; }
+.testimonial-text p { font-size: 16px; font-style: italic; color: var(--text-dark); margin-bottom: 20px; line-height: 1.8; }
+.testimonial-author { font-size: 14px; color: var(--text-gray); margin-bottom: 25px; }
+.testimonial-author strong { color: var(--text-dark); }
+
+/* --- CTA SECTION (Perfectly Positioned Collage) --- */
+.cta-section {
+    display: flex;
+    gap: 50px;
+    padding: 80px 20px;
+    align-items: center;
+}
+
+.cta-images {
+    position: relative;
+    width: 280px; /* Fixed width for the collage */
+    height: 280px; /* Fixed height */
+    flex-shrink: 0; 
+}
+
+.cta-images img {
+    position: absolute;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Exact placement of images mimicking the design */
+.cta-img-1 { 
+    width: 90px; 
+    height: 90px; 
+    top: 0px; 
+    left: 20px; 
+    z-index: 1; 
+}
+.cta-img-2 { 
+    width: 140px; 
+    height: 140px; 
+    top: 70px; 
+    left: 100px; 
+    z-index: 2; 
+}
+.cta-img-3 { 
+    width: 80px; 
+    height: 80px; 
+    top: 180px; 
+    left: 20px; 
+    z-index: 3; 
+}
+
+.cta-text { flex: 1; }
+.cta-text h2 { font-size: 32px; margin-bottom: 20px; font-weight: 700; line-height: 1.3; }
+.cta-text p { font-size: 15px; color: var(--text-gray); margin-bottom: 30px; }
+
+/* --- FOOTER --- */
+footer {
+    background: var(--bg-beige);
+    padding: 60px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.footer-col a {
+    display: block;
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+}
+
+/* --- RESPONSIVE DESIGN (Tablets and Phones) --- */
+@media (max-width: 900px) {
+    /* Hide middle nav links on mobile */
+    .nav-links { display: none; }
+    
+    .hero-content h1 { font-size: 32px; }
+    
+    /* Stack About section */
+    .about { flex-direction: column; }
+    
+    /* Stack the 3 columns into 1 single column */
+    .features-grid { grid-template-columns: 1fr; }
+    
+    /* Center testimonial */
+    .testimonial-content { flex-direction: column; text-align: center; }
+    
+    /* Stack CTA section */
+    .cta-section { flex-direction: column; text-align: center; }
+    .cta-images { margin: 0 auto 30px auto; }
+    
+    /* Stack footer */
+    .footer-container { flex-direction: column; gap: 40px; }
+    .footer-links { flex-wrap: wrap; gap: 40px; }
+}
